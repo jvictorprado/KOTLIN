@@ -1,0 +1,80 @@
+Avaliação de Linguagem de Programação Funcional
+
+
+
+
+
+
+
+
+1 – Defina e
+Diferencie os seguintes conceitos de programação, mostre exemplos
+em que o mesmo algoritmo pode ser implementado usando estes dois
+conceitos.
+
+
+
+
+a) Programação
+Imperativa e Programação Funcional
+
+
+
+
+b) Programação
+Orientada a Objetos e Programação Orientada a Procedimentos
+
+
+
+
+c) Avalição Lazy e
+Avaliação Assincrona
+
+
+
+
+d) Programação
+usando Laços e Recursividade
+
+
+
+
+e) Listas e
+Sequencias em Kotlin
+
+
+
+
+
+
+
+
+2a)
+Considere a seguinte classe de listas encadeadas:
+data class
+ListaEncadeada(val n:Int, val prox: ListaEncadeada?)
+
+
+
+
+a) Implemente uma
+função que transforme uma lista de kotlin em uma lista encadeada
+
+
+
+
+b) Implemente uma
+função que transforme uma lista encadeada em uma lista de kotlin
+
+
+
+
+c) Implemente uma
+função que “compacte” uma lista encadeada, ou seja, remova
+todos os elementos repetidos consecutivos da lista.
+
+
+
+
+d) Remover um
+n-esimo elemento de uma lista encadeada
