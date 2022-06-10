@@ -1,0 +1,91 @@
+1)a)LPI X LPF
+*Programação Imperativa: Tem como foco executar as operações na ordem (de forma algoritmica ou um passo a passo). Essas operações alteram o estado do programa a medida que vão sendo executadas. Para controle de fluxo podem utilizar loops, condicionais e chamadas de função e utilizam instancia de classes ou estruturas como forma de manipulação de dados.
+CODIGO
+fun soma(n:Int):Int{
+  var cont = 0
+  var somatorio = 0
+  while(cont<n){
+    somatorio += cont
+    cont++
+  }
+  return somatorio
+}
+
+*Programação Funcional: É uma forma de programação declarativa que não permite alterações já que o uso de variaveis não é recomendado, utiliza recursão como uma forma de controle de fluxo e tem funções como objetos de primeira classe e coleções como suas principais formas de manipulação de dados.
+CODIGO
+fun soma(n:Int):Int{
+  if(n==0)
+    return 0
+  else
+    return n + soma(n-1)
+}
+
+b)OP X OO
+*Orientada a Procedimentos: Define os tipos que modela primeiro e extende o sistema definindo novas operações.
+Exemplo: Um função geral que funciona para varios tipos de dados.
+Adicionar operações não interfere muito, mas adicionar novos tipos de dados requer alterações nas funções existentes.
+EXEMPLO:
+Figura = Circulo(raio) | Traingulo(l1,l2,l3)
+Float area (Figura f) {...}
+Float perimetro (Figura f){...}
+
+
+*Orientada a Objetos: Define as operações primeiro e extende o sistema definindo novos tipos de dados.
+Exemplo: Varias funções menores que funcionam para um tipo de dado especifico.Adicionar tipos de dados não interfere muito, mas adicionar novas operações requer alterações nos tipos de dados(classes) existentes.
+EXEMPLO:
+class Figura{
+  float area()
+  Float perimetro()
+}
+
+class Circulo extends Figura{
+  ...
+}
+
+class Traingulo extends Figura{
+  ...
+}
+
+c)LAZY X ASSINC
+Avaliação lazy faz parte da abordagem de programação assincrona. Corrotinas são um exemplo de programação assincrona e representam operações que esperam por algo na maior parte do tempo. 
+Ex: escrita e leitura a um banco de dados
+Corrotinas podem suspender uma operação a qualquer momento e essas funções são denominadas Suspending Functions
+
+Em aplicações Eager todos os componentes devem ser iniciados assim que a aplicação é inicializada,o que pode demorar muito tempo dependendo do tamanho da aplicação e o usuario pode não necessitar de todos componentes a principio.
+
+Já se uma aplicação for Lazy, os componentes seriam iniciados apenas quando fossem requisitados, resultando em um tempo 
+menor de inicialização da aplicação.
+Varaiveis e elementos de listas so são calculados a medida que são necessarios.
+Funções retornam dados parcialmente calculados
+
+Exemplo de aplicação lazy: 
+*Jogos: não é necessario carregar todos os niveis de uma vez ja que demoraria muito 
+e o usuario é obrigado a seguir uma sequencia pre-estabelecida pelos devs
+*Sites de noticias: o site carrega apenas as principais noticias da pagina principal
+e, a medida que o usuario busca outras noticias, o restante vai sendo carregado.
+
+d)LAÇOS X RECURSIVIDADE
+*Laços: Tambem conhecida como programação iterativa, é um tipo de programação que utiliza loops como por exemplo o "for" ou "while". Sua execução é encerrada quando a condição do loop é atingida.
+EXEMPLO:
+fun soma(n:Int):Int{
+  var cont = 0
+  var somatorio = 0
+  while(cont<n){
+    somatorio += cont
+    cont++
+  }
+  return somatorio
+}
+*Recursiva: Tipo de programação onde a função chama a si mesma. Sua condição é encerrada assim que o caso base é satisfeito.
+Ambas tem propensão a rodarem infinitamente, na iterativa quando há algum erro no incremento/decremento, já na recursiva pode ocorrer com a definição errada de um caso base.
+EXEMPLO:
+fun soma(n:Int):Int{
+  if(n==0)
+    return 0
+  else
+    return n + soma(n-1)
+}
+
+e)LISTAS X SEQUENCIAS
+*Listas: Listas em kotlin a priori são imutaveis, ou seja, READ ONLY, mas existe uma outra estrutura que permite modificações: MutableList. Listas são similares ao Vector de Java. São do tipo eager, ou seja, as operções são realizadas assim que a aplição é inicializada. E qualquer função de coleção aplicada sobre listas tambem será eager.
+*Sequencias utilizam a abordagem lazy e possuem dois tipos de operações: intermediarias e terminais. As intermediarias não são executadas na hora, são armazenadas. Apenas quando uma operação do tipo terminal é chamada, a operação intermediaria são aplicadas a cada elemento e por fim a função terminal é chamada. Funções intermediarias como map, distinct, groupBy retornam outra sequencia, já  first e count não retornam.
